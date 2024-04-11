@@ -1,0 +1,31 @@
+.w100 {
+  width: 134px;
+  padding: 8px 16px;
+  border: 1px solid #179a48;
+}
+
+@media screen and (max-width:650px) {
+  .w100{
+    width:100px;
+    padding: 6px 10px;
+  }
+}
+
+.bgbtn {
+  background-color: #179a48;
+  font-size: 20px;
+  color: white;
+  
+}
+
+.bgbtn:hover{
+  background-color: yellow;
+  color: #333;
+
+}
+
+.desccolor{
+  color: #179a48 !important;
+  font-size: 32px;
+  font-weight: 400;
+}

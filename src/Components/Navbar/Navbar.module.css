@@ -1,0 +1,13 @@
+.prof {
+  width: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.bgbtn {
+  border-bottom: .5px solid #3f3f3f;
+  padding: 10px;
+}
