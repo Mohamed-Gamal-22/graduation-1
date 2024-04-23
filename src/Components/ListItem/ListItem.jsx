@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./ListItem.module.css";
-import Table from "react-bootstrap/Table";
+import ButtonScroll from "../ButtonScroll/ButtonScroll";
+import TableTransactions from "./../TableTransactions/TableTransactions";
+import BarInterface from "../BarInterface/BarInterface";
+import NotificationInfo from "../NotificationInfo/NotificationInfo";
+import Card from "../Card/Card";
 
 export default function ListItem() {
+  const [options, setoptions] = useState(["done", "faild"]);
   return (
     <>
       <div className="container my-3 text-capitalize">
@@ -13,83 +18,32 @@ export default function ListItem() {
             <div className={`btn ${style.bgbtn} px-4 rounded-3`}>Withdraw</div>
           </div>
         </div>
-        <div className="selections my-5 w-50 d-flex gap-3">
-          <select name="status" id="status" className={`${style.w100}  rounded-3 text-capitalize`}>
-            <option value="status" className="desccolor">status</option>
-          </select>
-          <select name="date" id="date" className={`${style.w100}  rounded-3 text-capitalize`}>
-            <option value="date" className="desccolor">date</option>
-          </select>
-          <select name="from" id="from" className={`${style.w100}  rounded-3 text-capitalize`}>
-            <option value="from" className="desccolor">from</option>
-          </select>
-          <select name="to" id="to" className={`${style.w100}  rounded-3 text-capitalize`}>
-            <option value="to" className="desccolor">to</option>
-          </select>
-          <select name="type" id="type" className={`${style.w100} rounded-3 text-capitalize`}>
-            <option value="type">type</option>
-          </select>
+        <div className="my-5">
+          <Card cardincome={"INCOME"} money={"$2000.00"} />
         </div>
-        <Table responsive="xxl">
-          <thead>
-            <tr>
-              <th className={`${style.desccolor}`}>date</th>
-              <th className={`${style.desccolor}`}>description </th>
-              <th className={`${style.desccolor}`}>amount</th>
-              <th className={`${style.desccolor}`}>from</th>
-              <th className={`${style.desccolor}`}>to</th>
-              <th className={`${style.desccolor}`}>type</th>
-              <th className={`${style.desccolor}`}>status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>22-12-2024</td>
-              <td>transfare for buying</td>
-              <td>$200</td>
-              <td>send money</td>
-              <td>mohamed</td>
-              <td>withdraw</td>
-              <td>done</td>
-            </tr>
-            <tr>
-              <td>22-12-2024</td>
-              <td>transfare for buying</td>
-              <td>$200</td>
-              <td>send money</td>
-              <td>mohamed</td>
-              <td>withdraw</td>
-              <td>done</td>
-            </tr>
-            <tr>
-              <td>22-12-2024</td>
-              <td>transfare for buying</td>
-              <td>$200</td>
-              <td>send money</td>
-              <td>mohamed</td>
-              <td>withdraw</td>
-              <td>done</td>
-            </tr>
-            <tr>
-              <td>22-12-2024</td>
-              <td>transfare for buying</td>
-              <td>$200</td>
-              <td>send money</td>
-              <td>mohamed</td>
-              <td>withdraw</td>
-              <td>done</td>
-            </tr>
-            <tr>
-              <td>22-12-2024</td>
-              <td>transfare for buying</td>
-              <td>$200</td>
-              <td>send money</td>
-              <td>mohamed</td>
-              <td>withdraw</td>
-              <td>done</td>
-            </tr>
-          </tbody>
-        </Table>
+        <div className="my-5">
+          <NotificationInfo />
+        </div>
+        <div className="my-5">
+          <BarInterface />
+        </div>
+        <div className="selections my-5 d-flex gap-3 flex-wrap">
+          <ButtonScroll name="Status" options={options} />
+          <ButtonScroll name="date" options={options} />
+          <ButtonScroll name="from" options={options} />
+          <ButtonScroll name="to" options={options} />
+          <ButtonScroll name="type" options={options} />
+        </div>
+
+        <TableTransactions
+          date="12-11-2024"
+          description="Transfare For Buying"
+          amount="$200"
+          from="Send Money"
+          to="hadeer"
+          type="withdraw"
+          status="done"
+        />
       </div>
     </>
   );

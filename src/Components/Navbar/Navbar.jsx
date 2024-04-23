@@ -2,18 +2,18 @@ import React from "react";
 import style from "./Navbar.module.css";
 import profile from "../../images/three.jpg";
 import { NavLink } from "react-router-dom";
-import logo from "../../images/logo.png"
+import logo from "../../images/logo.png";
 
 export default function Navbar() {
   return (
     <>
-      <nav class={`navbar navbar-expand-lg ${style.bgbtn}`}>
-        <div class="container">
-          <a class="navbar-brand" href="#">
+      <nav className={`navbar navbar-expand-lg ${style.bgbtn}`}>
+        <div className="container">
+          <a className="navbar-brand" href="#">
             <img src={logo} width={161} alt="" />
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -21,35 +21,35 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link">Dashboard</a>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav mx-auto">
+              <li className="nav-item">
+                <span className="nav-link">Dashboard</span>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <NavLink to="/" className="text-decoration-none">
-                  <a class="nav-link">Transactions</a>
+                  <span className="nav-link">Transactions</span>
                 </NavLink>
               </li>
-              <li class="nav-item">
-                <a class="nav-link">Bills</a>
+              <li className="nav-item">
+                <span className="nav-link">Bills</span>
               </li>
-              <li class="nav-item">
-                <a class="nav-link">Payment</a>
+              <li className="nav-item">
+                <span className="nav-link">Payment</span>
               </li>
             </ul>
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item d-flex align-items-center">
-                <i class="fa-regular fa-bell text-dark fs-5 me-2 pointer"></i>
-                <a class="nav-link" href="#">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item d-flex align-items-center">
+                <i className="fa-regular fa-bell text-dark fs-5 me-2 pointer"></i>
+                <span className="nav-link" href="#">
                   <img
                     src={profile}
                     className={`${style.prof} p-1`}
                     alt="profile"
                   />
-                </a>
+                </span>
               </li>
             </ul>
           </div>
